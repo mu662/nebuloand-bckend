@@ -14,10 +14,3 @@ exports.AppDataSource = new typeorm_1.DataSource({
     synchronize: true,
     logging: false,
 });
-exports.AppDataSource.initialize()
-    .then(() => {
-    console.log("Data Source has been initialized!");
-})
-    .catch((err) => {
-    console.error("Error during Data Source initialization", err);
-});

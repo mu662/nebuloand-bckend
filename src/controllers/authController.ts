@@ -7,6 +7,10 @@ import { authService } from '../services/authService';
 export const signup = async (req: Request, res: Response) => {
   try {
     const { name, email, username, password } = req.body;
+
+    console.log("req.body",req.body)
+    res.json({ test:"123" });
+    return
     const hashedPassword = await hashPassword(password);
 
     const user = new User();
