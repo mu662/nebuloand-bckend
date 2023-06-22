@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 
 import { authRoutes } from './routes/authRoutes';
 import { errorHandler } from './helpers/errorHandler';
-import { AppDataSource } from './config/databaseConfig';
+import { AppDataSource } from './config'
 
 dotenv.config();
 
@@ -21,6 +21,7 @@ AppDataSource.initialize()
     console.error("Error during Data Source initialization", err);
   });
 
+
 app.use('/auth', authRoutes);
 
 app.use(errorHandler);
@@ -28,4 +29,3 @@ app.use(errorHandler);
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
-

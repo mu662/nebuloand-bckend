@@ -8,9 +8,6 @@ const authService_1 = require("../services/authService");
 const signup = async (req, res) => {
     try {
         const { name, email, username, password } = req.body;
-        console.log("req.body", req.body);
-        res.json({ test: "123" });
-        return;
         const hashedPassword = await (0, bcryptUtils_1.hashPassword)(password);
         const user = new User_1.User();
         user.name = name;

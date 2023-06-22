@@ -1,12 +1,8 @@
-import {
-    MigrationInterface,
-    QueryRunner,
-    Table
-} from "typeorm"
+import { MigrationInterface, QueryRunner,Table } from "typeorm"
 
-export class QuestionRefactoringTIMESTAMP implements MigrationInterface {
-    async up(queryRunner: QueryRunner): Promise<void> {
+export class CreateUserTable1687344659000 implements MigrationInterface {
 
+    public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(
             new Table({
                 name: "user",
@@ -32,21 +28,14 @@ export class QuestionRefactoringTIMESTAMP implements MigrationInterface {
                         name: "password",
                         type: "varchar",
                     },
-
-                    {
-                        name: "created_at",
-                        type: "timestamp",
-                        default: "now()",
-                    },
                 ],
             }),
             true,
         )
     }
 
-    async down(queryRunner: QueryRunner): Promise<void> {
+    public async down(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.dropTable("user")
     }
+
 }
-
-

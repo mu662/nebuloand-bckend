@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.QuestionRefactoringTIMESTAMP = void 0;
+exports.CreateUserTable1687344659000 = void 0;
 const typeorm_1 = require("typeorm");
-class QuestionRefactoringTIMESTAMP {
+class CreateUserTable1687344659000 {
     async up(queryRunner) {
         await queryRunner.createTable(new typeorm_1.Table({
             name: "user",
@@ -28,11 +28,6 @@ class QuestionRefactoringTIMESTAMP {
                     name: "password",
                     type: "varchar",
                 },
-                {
-                    name: "created_at",
-                    type: "timestamp",
-                    default: "now()",
-                },
             ],
         }), true);
     }
@@ -40,4 +35,4 @@ class QuestionRefactoringTIMESTAMP {
         await queryRunner.dropTable("user");
     }
 }
-exports.QuestionRefactoringTIMESTAMP = QuestionRefactoringTIMESTAMP;
+exports.CreateUserTable1687344659000 = CreateUserTable1687344659000;
